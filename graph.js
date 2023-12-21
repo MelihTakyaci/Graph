@@ -41,11 +41,9 @@ function generateGraph() {
     var inputFunction = document.getElementById('inputFunction').value;
     var data = generateData(inputFunction);
 
-    // Y ekseninin minimum değerini bul
     var minY = Math.min(...data.y);
-    var minYFloor = Math.floor(minY / 10) * 10; // 10'un katlarına yuvarla
+    var minYFloor = Math.floor(minY / 10) * 10;
 
-    // Y ekseninin minimum değeri 0'a eşit veya büyükse, y değerlerini ayarla
     if (minYFloor >= 0) {
         minYFloor = 0;
     }
@@ -75,7 +73,7 @@ function generateGraph() {
                 y: {
                     type: 'linear',
                     position: 'center',
-                    min: minYFloor, // Y ekseninin minimum değeri
+                    min: minYFloor,
                     ticks: {
                         stepSize: 10
                     }
