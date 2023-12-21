@@ -14,13 +14,15 @@ function generateData(inputFunction) {
 
 function calculateFunction(inputFunction, value) {
     try {
+        // Girilen fonksiyondaki 'x' ifadesini uygun değişkene çevirir
         var editedFunction = inputFunction
             .replace(/sin/g, 'Math.sin')
             .replace(/cos/g, 'Math.cos')
             .replace(/tan/g, 'Math.tan')
             .replace(/sqrt/g, 'Math.sqrt')
             .replace(/log/g, 'Math.log')
-            .replace(/exp/g, 'Math.exp');
+            .replace(/exp/g, 'Math.exp')
+            .replace(/[\w]/g, '(' + value + ')'); // [\w] ile herhangi bir karakteri temsil ediyoruz
 
         var safeFunction = new Function('x', `
             return ${editedFunction};
@@ -41,19 +43,19 @@ function generateGraph() {
     var inputFunction = document.getElementById('inputFunction').value;
     var data = generateData(inputFunction);
 
-    // Y ekseninin minimum ve maksimum belirle
+    // Y ekseninin minimum ve maksimum değerlerini belirle
     var minY = Math.min(...data.y);
     var maxY = Math.max(...data.y);
 
-    // Maksimum ve minimum değerlerin 
+    // Maksimum ve minimum değerlerin mutlak değerlerini al
     var absMax = Math.abs(maxY);
     var absMin = Math.abs(minY);
 
-    // Mutlak degere gore max min bul
+    // Mutlak değerlere göre yeni maksimum ve minimum değerleri belirle
     var newMax = absMax > absMin ? -absMax : absMax;
     var newMin = absMax > absMin ? absMax : -absMin;
 
-    // X ekseninin min ve max degeri
+    // X ekseninin minimum ve maksimum değerlerini belirle
     var minX = Math.min(...data.x);
     var maxX = Math.max(...data.x);
 
