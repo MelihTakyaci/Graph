@@ -2,9 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
     align-items: center;
-    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(2 , 10% 70%);
+    grid-template-columns: repeat(2 , 15% 70%);
     column-gap: 3rem;
 }
 img{
@@ -13,17 +12,12 @@ img{
 }
 input {
     margin-bottom: 10px;
+    width: 100%;
     padding: 10px;
-    border: none;
+    border: 1px solid rgb(30,30,30 , .5);
+    border-radius: 0.600rem;
     outline: none;
-    border-radius: 0.750rem;
-}
-button{
-    cursor: pointer;
-    border-radius: 0.625rem;
-    padding: 10px 20px;
-    border: 1px solid rgb(30,30,30,.2);
-    background-color: rgb(90,90,90,.15) ;
+    background-color: transparent;
 }
 canvas {
     border: 1px solid rgb(30,30,30 , .5);
@@ -32,8 +26,10 @@ canvas {
 }
 .getF{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 @media screen and (max-width: 1068px) {
     body{

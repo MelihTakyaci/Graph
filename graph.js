@@ -14,14 +14,13 @@ function generateData(inputFunction1, inputFunction2 ,inputFunction3) {
 
     return { x: x, y1: y1, y2: y2 , y3: y3 };
 }
-
 function calculateFunction(inputFunction, value) {
     try {
         var editedFunction = inputFunction
             .replace(/sin/g, 'Math.sin')
             .replace(/cos/g, 'Math.cos')
             .replace(/tan/g, 'Math.tan')
-            .replace(/sqrt/g, 'Math.sqrt')
+            .replace(/sqt/g, 'Math.sqrt')
             .replace(/log/g, 'Math.log')
             .replace(/exp/g, 'Math.exp');
 
