@@ -86,7 +86,7 @@ function generateGraph() {
                 },
                 {
                     label: 'Function Graph 3',
-                    data: data.y2,
+                    data: data.y3,
                     borderColor: 'rgba(55,230, 20, 1)',
                     borderWidth: 2,
                     fill: false
