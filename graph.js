@@ -41,12 +41,21 @@ function generateGraph() {
     var inputFunction = document.getElementById('inputFunction').value;
     var data = generateData(inputFunction);
 
+    // Y ekseninin minimum ve maksimum belirle
     var minY = Math.min(...data.y);
-    var minYFloor = Math.floor(minY / 10) * 10;
+    var maxY = Math.max(...data.y);
 
-    if (minYFloor >= 0) {
-        minYFloor = 0;
-    }
+    // Maksimum ve minimum değerlerin 
+    var absMax = Math.abs(maxY);
+    var absMin = Math.abs(minY);
+
+    // Mutlak degere gore max min bul
+    var newMax = absMax > absMin ? -absMax : absMax;
+    var newMin = absMax > absMin ? absMax : -absMin;
+
+    // X ekseninin min ve max degeri
+    var minX = Math.min(...data.x);
+    var maxX = Math.max(...data.x);
 
     var ctx = document.getElementById('myChart').getContext('2d');
     myChart = new Chart(ctx, {
@@ -66,6 +75,8 @@ function generateGraph() {
                 x: {
                     type: 'linear',
                     position: 'center',
+                    min: minX,
+                    max: maxX,
                     ticks: {
                         stepSize: 1
                     }
@@ -73,7 +84,8 @@ function generateGraph() {
                 y: {
                     type: 'linear',
                     position: 'center',
-                    min: minYFloor,
+                    min: newMin,
+                    max: newMax,
                     ticks: {
                         stepSize: 10
                     }
