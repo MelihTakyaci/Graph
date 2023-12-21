@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Function Graph</title>
+    <!-- Chart.js kütüphanesini ekleyin -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.10.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./mint-logo.svg"/>
+    <label for="inputFunction">Enter a function:</label>
+    <input type="text" id="inputFunction" placeholder="e.g., sin(x), x^2, cos(x)">
+    <button onclick="generateGraph()">Generate Graph</button>
+
+    <canvas id="myChart" width="600" height="400"></canvas>
+
+    <script src="./graph.js"></script>
+</body>
+</html>
