@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Function Graph</title>
     <!-- Chart.js Library for graph -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.10.0/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="getF">
     <img src="./mint-logo.svg"/>
-    <label for="inputFunction">Enter a function:</label>
-    <input type="text" id="inputFunction" placeholder="e.g., sin(x), x^2, cos(x)">
-    <button onclick="generateGraph()">Generate Graph</button>
+
+        <label for="inputFunction1">Enter function 1:</label>
+        <input type="text" id="inputFunction1" placeholder="e.g., sin(x), x^2, cos(x)" oninput="generateGraph()">
+
+        <label for="inputFunction2">Enter function 2:</label>
+        <input type="text" id="inputFunction2" placeholder="e.g., sin(x), x^2, cos(x)" oninput="generateGraph()">
+        
+        <label for="inputFunction3">Enter function 3:</label>
+        <input type="text" id="inputFunction3" placeholder="e.g., sin(x), x^2, cos(x)" oninput="generateGraph()">
+    </div>
 
     <canvas id="myChart" width="600" height="400"></canvas>
-
-    <script src="./graph.js"></script>
+        
 </body>
 </html>
+<script src="./graph.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.10.0/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
