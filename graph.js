@@ -1,5 +1,5 @@
 var myChart;
-
+// X ve y degerlerini olustur y degerlerini calculateFunction a esitle
 function generateData(inputFunction) {
     var x = [];
     var y = [];
@@ -11,7 +11,7 @@ function generateData(inputFunction) {
 
     return { x: x, y: y };
 }
-
+// math fonksiyonu ile trigonometrik fonksiyon olustur
 function calculateFunction(inputFunction, value) {
     try {
         var editedFunction = inputFunction
